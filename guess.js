@@ -94,6 +94,7 @@ function handleGuesses() {
   }
   // check if user win or lose
   if (successGuess) {
+    messageArea.classList.add("s");
     messageArea.innerHTML = `You win. The word is <span>${wordToGuess}</span>`;
     if (numberOfHints === 2) {
       messageArea.innerHTML += `<p>Congratz you didn't use hints</p>`;
@@ -117,6 +118,7 @@ function handleGuesses() {
     } else {
       guessButton.disabled = true;
       getHintButton.disabled = true;
+      messageArea.classList.add("f");
       messageArea.innerHTML = `You lost. The word is <span>${wordToGuess}</span>`;
     }
   }
